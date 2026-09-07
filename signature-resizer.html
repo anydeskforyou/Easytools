@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Signature Resizer Online - Signature Resize करें</title>
+
+<meta name="description" content="Free Signature Resizer Online. Signature image की width और height बदलें और download करें।">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://anydeskforyou.github.io/Easytools/signature-resizer.html">
+
+<style>
+body{margin:0;font-family:Arial,"Noto Sans Devanagari";background:#f5f7fb;color:#172033}
+header,footer{background:#16213e;color:white;padding:18px}
+nav{max-width:900px;margin:auto;display:flex;justify-content:space-between}
+nav a{color:white}
+main{max-width:900px;margin:auto;padding:30px 15px}
+.tool{background:white;padding:25px;border-radius:15px;box-shadow:0 3px 15px #0001}
+input,button{padding:11px;margin:7px;border-radius:8px}
+.primary{background:#315b96;color:white;border:0}
+.back{display:inline-block;background:#e9eef8;padding:10px 15px;border-radius:8px;text-decoration:none;color:#172033}
+canvas{max-width:100%;border:1px solid #ddd;margin-top:15px}
+footer{text-align:center;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<b>🛠️ Amit Online Tools</b>
+<a href="index.html">Home</a>
+</nav>
+</header>
+
+<main>
+
+<div class="tool">
+
+<a class="back" href="index.html">← सभी Tools</a>
+
+<h1>✍️ Signature Resizer</h1>
+
+<p>अपनी signature image को required size में resize करें।</p>
+
+<input id="file" type="file" accept="image/*">
+
+<br>
+
+<input id="width" type="number" value="140" placeholder="Width">
+
+<input id="height" type="number" value="60" placeholder="Height">
+
+<br>
+
+<button class="primary" onclick="resizeSignature()">
+Resize Signature
+</button>
+
+<div id="out"></div>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Amit Online Tools
+</footer>
+
+<script>
+
+function resizeSignature(){
+
+let f=file.files[0];
+
+if(!f){
+alert("Signature चुनें");
+return;
+}
+
+let img=new Image();
+
+img.onload=function(){
+
+let w=parseInt(width.value);
+let h=parseInt(height.value);
+
+let canvas=document.createElement("canvas");
+
+canvas.width=w;
+canvas.height=h;
+
+canvas.getContext("2d").drawImage(
+img,0,0,w,h
+);
+
+canvas.toBlob(function(blob){
+
+let url=URL.createObjectURL(blob);
+
+out.innerHTML=`
+<p>Size: ${w} × ${h} px</p>
+<canvas id="preview"></canvas>
+<br>
+<a href="${url}" download="signature.jpg">
+<button class="primary">⬇️ Download Signature</button>
+</a>
+`;
+
+let p=document.getElementById("preview");
+
+p.width=w;
+p.height=h;
+
+p.getContext("2d").drawImage(canvas,0,0);
+
+},"image/jpeg",0.9);
+
+};
+
+img.src=URL.createObjectURL(f);
+
+}
+
+</script>
+
+</body>
+</html>
