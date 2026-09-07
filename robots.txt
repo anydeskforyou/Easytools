@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anydeskforyou.github.io/Easytools/sitemap.xml
