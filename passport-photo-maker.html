@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Passport Photo Maker Online - Passport Size Photo</title>
+
+<meta name="description" content="Free Passport Photo Maker Online. अपनी photo से passport size photo sheet बनाएं और download करें।">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://anydeskforyou.github.io/Easytools/passport-photo-maker.html">
+
+<style>
+body{margin:0;font-family:Arial,"Noto Sans Devanagari";background:#f5f7fb;color:#172033}
+header,footer{background:#16213e;color:white;padding:18px}
+nav{max-width:900px;margin:auto;display:flex;justify-content:space-between}
+nav a{color:white}
+main{max-width:900px;margin:auto;padding:30px 15px}
+.tool{background:white;padding:25px;border-radius:15px;box-shadow:0 3px 15px #0001}
+input,select,button{padding:11px;margin:7px;border-radius:8px}
+.primary{background:#315b96;color:white;border:0}
+.back{display:inline-block;background:#e9eef8;padding:10px 15px;border-radius:8px;text-decoration:none;color:#172033}
+canvas{max-width:100%;height:auto;border:1px solid #ddd;margin-top:15px}
+footer{text-align:center;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<b>🛠️ Amit Online Tools</b>
+<a href="index.html">Home</a>
+</nav>
+</header>
+
+<main>
+
+<div class="tool">
+
+<a class="back" href="index.html">← सभी Tools</a>
+
+<h1>🪪 Passport Photo Maker</h1>
+
+<p>
+Photo चुनें और passport size photo की sheet बनाएं।
+</p>
+
+<input id="file" type="file" accept="image/*">
+
+<br>
+
+<select id="copies">
+<option value="4">4 Photos</option>
+<option value="6">6 Photos</option>
+<option value="8">8 Photos</option>
+<option value="12">12 Photos</option>
+</select>
+
+<br>
+
+<button class="primary" onclick="makeSheet()">
+Create Photo Sheet
+</button>
+
+<div id="out"></div>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Amit Online Tools
+</footer>
+
+<script>
+
+function makeSheet(){
+
+let f=file.files[0];
+
+if(!f){
+alert("Photo चुनें");
+return;
+}
+
+let img=new Image();
+
+img.onload=function(){
+
+let n=parseInt(copies.value);
+
+let canvas=document.createElement("canvas");
+
+canvas.width=800;
+canvas.height=1100;
+
+let ctx=canvas.getContext("2d");
+
+ctx.fillStyle="white";
+ctx.fillRect(0,0,800,1100);
+
+let w=200;
+let h=260;
+
+let x=50;
+let y=50;
+
+for(let k=0;k<n;k++){
+
+let col=k%3;
+let row=Math.floor(k/3);
+
+let px=x+col*250;
+let py=y+row*300;
+
+ctx.drawImage(
+img,
+px,
+py,
+w,
+h
+);
+
+}
+
+canvas.toBlob(function(blob){
+
+let url=URL.createObjectURL(blob);
+
+out.innerHTML=`
+<canvas id="preview"></canvas>
+<br>
+<a href="${url}" download="passport-photo-sheet.jpg">
+<button class="primary">⬇️ Download Photo Sheet</button>
+</a>
+`;
+
+let p=document.getElementById("preview");
+
+p.width=800;
+p.height=1100;
+
+p.getContext("2d").drawImage(canvas,0,0);
+
+},"image/jpeg",0.95);
+
+};
+
+img.src=URL.createObjectURL(f);
+
+}
+
+</script>
+
+</body>
+</html>
