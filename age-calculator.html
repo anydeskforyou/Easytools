@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Age Calculator Online - उम्र Calculate करें | Amit Online Tools</title>
+
+<meta name="description" content="Free Age Calculator Online. Date of Birth डालकर अपनी उम्र वर्ष, महीने और दिनों में calculate करें।">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://anydeskforyou.github.io/Easytools/age-calculator.html">
+
+<style>
+body{margin:0;font-family:Arial,"Noto Sans Devanagari";background:#f5f7fb;color:#172033}
+header,footer{background:#16213e;color:white;padding:18px}
+nav{max-width:900px;margin:auto;display:flex;justify-content:space-between}
+nav a{color:white}
+main{max-width:700px;margin:auto;padding:30px 15px}
+.tool{background:white;padding:30px;border-radius:15px;box-shadow:0 3px 15px #0001}
+input,button{padding:12px;margin:7px;border-radius:8px}
+.primary{background:#315b96;color:white;border:0;cursor:pointer}
+.back{display:inline-block;background:#e9eef8;padding:10px 15px;border-radius:8px;text-decoration:none;color:#172033}
+.result{background:#f1f5fb;padding:18px;border-radius:10px;margin-top:20px;font-size:18px}
+footer{text-align:center;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<b>🛠️ Amit Online Tools</b>
+<a href="index.html">Home</a>
+</nav>
+</header>
+
+<main>
+
+<div class="tool">
+
+<a class="back" href="index.html">← सभी Tools</a>
+
+<h1>🎂 Age Calculator</h1>
+
+<p>
+अपनी Date of Birth डालकर exact age calculate करें।
+</p>
+
+<label>Date of Birth</label>
+
+<br>
+
+<input id="dob" type="date">
+
+<br>
+
+<button class="primary" onclick="calculateAge()">
+Calculate Age
+</button>
+
+<div id="result"></div>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Amit Online Tools
+</footer>
+
+<script>
+
+function calculateAge(){
+
+let value=dob.value;
+
+if(!value){
+alert("Date of Birth चुनें");
+return;
+}
+
+let birth=new Date(value+"T00:00:00");
+
+let today=new Date();
+
+if(birth>today){
+alert("Future की date valid नहीं है");
+return;
+}
+
+let years=today.getFullYear()-birth.getFullYear();
+
+let months=today.getMonth()-birth.getMonth();
+
+let days=today.getDate()-birth.getDate();
+
+if(days<0){
+
+months--;
+
+let previousMonth=
+new Date(
+today.getFullYear(),
+today.getMonth(),
+0
+).getDate();
+
+days+=previousMonth;
+
+}
+
+if(months<0){
+
+years--;
+
+months+=12;
+
+}
+
+result.innerHTML=`
+
+<div class="result">
+
+🎂 आपकी उम्र:
+
+<br><br>
+
+<b>
+${years} वर्ष,
+${months} महीने,
+${days} दिन
+</b>
+
+</div>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
