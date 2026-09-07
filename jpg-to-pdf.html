@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>JPG to PDF Converter Online - Images to PDF Free</title>
+
+<meta name="description" content="Free JPG to PDF Converter Online. एक या कई photos को एक PDF file में convert करें।">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://anydeskforyou.github.io/Easytools/jpg-to-pdf.html">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{margin:0;font-family:Arial,"Noto Sans Devanagari";background:#f5f7fb;color:#172033}
+header,footer{background:#16213e;color:white;padding:18px}
+nav{max-width:900px;margin:auto;display:flex;justify-content:space-between}
+nav a{color:white}
+main{max-width:900px;margin:auto;padding:30px 15px}
+.tool{background:white;padding:25px;border-radius:15px;box-shadow:0 3px 15px #0001}
+input,button{padding:11px;margin:7px;border-radius:8px}
+.primary{background:#315b96;color:white;border:0}
+.back{display:inline-block;background:#e9eef8;padding:10px 15px;border-radius:8px;text-decoration:none;color:#172033}
+.result{background:#f1f5fb;padding:15px;border-radius:8px;margin-top:15px}
+footer{text-align:center;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<b>🛠️ Amit Online Tools</b>
+<a href="index.html">Home</a>
+</nav>
+</header>
+
+<main>
+
+<div class="tool">
+
+<a class="back" href="index.html">← सभी Tools</a>
+
+<h1>📄 JPG to PDF Converter</h1>
+
+<p>
+एक या कई JPG/PNG photos को एक PDF file में convert करें।
+</p>
+
+<input id="file" type="file" accept="image/*" multiple>
+
+<br>
+
+<button class="primary" onclick="createPDF()">
+Create PDF
+</button>
+
+<div id="out"></div>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Amit Online Tools
+</footer>
+
+<script>
+
+async function createPDF(){
+
+let files=file.files;
+
+if(!files.length){
+alert("Photos चुनें");
+return;
+}
+
+const {jsPDF}=window.jspdf;
+
+let pdf=new jsPDF();
+
+for(let i=0;i<files.length;i++){
+
+let img=await loadImage(files[i]);
+
+if(i>0){
+pdf.addPage();
+}
+
+let pageW=pdf.internal.pageSize.getWidth();
+let pageH=pdf.internal.pageSize.getHeight();
+
+let ratio=Math.min(
+pageW/img.width,
+pageH/img.height
+);
+
+let w=img.width*ratio;
+let h=img.height*ratio;
+
+pdf.addImage(
+img.src,
+"JPEG",
+(pageW-w)/2,
+(pageH-h)/2,
+w,
+h
+);
+
+}
+
+pdf.save("amit-online-tools.pdf");
+
+out.innerHTML=`
+<div class="result">
+✅ PDF तैयार हो गई।
+<br>
+आपकी PDF download हो गई है।
+</div>
+`;
+
+}
+
+function loadImage(file){
+
+return new Promise(function(resolve,reject){
+
+let img=new Image();
+
+img.onload=function(){
+resolve(img);
+};
+
+img.onerror=reject;
+
+img.src=URL.createObjectURL(file);
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
