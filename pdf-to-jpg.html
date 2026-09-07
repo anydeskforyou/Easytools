@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>PDF to JPG Converter Online - PDF Pages to Images</title>
+
+<meta name="description" content="Free PDF to JPG Converter Online. PDF के pages को JPG images में convert करें और हर page download करें।">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://anydeskforyou.github.io/Easytools/pdf-to-jpg.html">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<style>
+body{margin:0;font-family:Arial,"Noto Sans Devanagari";background:#f5f7fb;color:#172033}
+header,footer{background:#16213e;color:white;padding:18px}
+nav{max-width:900px;margin:auto;display:flex;justify-content:space-between}
+nav a{color:white}
+main{max-width:900px;margin:auto;padding:30px 15px}
+.tool{background:white;padding:25px;border-radius:15px;box-shadow:0 3px 15px #0001}
+input,button{padding:11px;margin:7px;border-radius:8px}
+.primary{background:#315b96;color:white;border:0}
+.back{display:inline-block;background:#e9eef8;padding:10px 15px;border-radius:8px;text-decoration:none;color:#172033}
+.page{padding:15px;background:#f1f5fb;margin-top:15px;border-radius:8px}
+canvas{max-width:100%;height:auto;border:1px solid #ddd}
+footer{text-align:center;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<b>🛠️ Amit Online Tools</b>
+<a href="index.html">Home</a>
+</nav>
+</header>
+
+<main>
+
+<div class="tool">
+
+<a class="back" href="index.html">← सभी Tools</a>
+
+<h1>🖼️ PDF to JPG Converter</h1>
+
+<p>
+PDF file चुनें और उसके सभी pages को JPG images में convert करें।
+</p>
+
+<input id="file" type="file" accept="application/pdf">
+
+<br>
+
+<button class="primary" onclick="convertPDF()">
+Convert Pages
+</button>
+
+<div id="out"></div>
+
+</div>
+
+</main>
+
+<footer>
+© 2026 Amit Online Tools
+</footer>
+
+<script>
+
+async function convertPDF(){
+
+let f=file.files[0];
+
+if(!f){
+alert("PDF चुनें");
+return;
+}
+
+out.innerHTML="⏳ PDF process हो रही है...";
+
+let data=new Uint8Array(
+await f.arrayBuffer()
+);
+
+let pdf=await pdfjsLib
+.getDocument({data:data})
+.promise;
+
+out.innerHTML="";
+
+for(let p=1;p<=pdf.numPages;p++){
+
+let page=await pdf.getPage(p);
+
+let viewport=page.getViewport({
+scale:1.5
+});
+
+let canvas=document.createElement("canvas");
+
+canvas.width=viewport.width;
+canvas.height=viewport.height;
+
+await page.render({
+canvasContext:canvas.getContext("2d"),
+viewport:viewport
+}).promise;
+
+let blob=await new Promise(resolve=>{
+canvas.toBlob(resolve,"image/jpeg",0.9);
+});
+
+let url=URL.createObjectURL(blob);
+
+let div=document.createElement("div");
+
+div.className="page";
+
+div.innerHTML=`
+<h3>Page ${p}</h3>
+`;
+
+div.appendChild(canvas);
+
+let br=document.createElement("br");
+
+div.appendChild(br);
+
+let a=document.createElement("a");
+
+a.href=url;
+a.download="page-"+p+".jpg";
+
+let button=document.createElement("button");
+
+button.className="primary";
+button.textContent="⬇️ Download Page "+p;
+
+a.appendChild(button);
+
+div.appendChild(a);
+
+out.appendChild(div);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
