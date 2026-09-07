@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Amit Online Tools - Free Image, PDF & Calculator Tools Online</title>
+<title>
+Amit Online Tools - Free Image, PDF & Calculator Tools Online
+</title>
 
-<meta name="description" content="Amit Online Tools पर Image Compressor, Image Resizer, Image Cropper, Passport Photo Maker, PNG to JPG, JPG to PDF, PDF to JPG, Age Calculator और EMI Calculator जैसे free online tools इस्तेमाल करें।">
+<meta name="description"
+content="Amit Online Tools पर Image Compressor, Image Resizer, Image Cropper, Passport Photo Maker, Document Scanner, PNG to JPG, JPG to PDF, PDF to JPG, Age Calculator और EMI Calculator जैसे free online tools इस्तेमाल करें।">
 
-<meta name="keywords" content="Amit Online Tools, free online tools, image compressor, image resizer, image cropper, passport photo maker, PNG to JPG, JPG to PDF, PDF to JPG, age calculator, EMI calculator">
+<meta name="keywords"
+content="Amit Online Tools, image compressor, image resizer, image cropper, document scanner, passport photo maker, PNG to JPG, JPG to PDF, PDF to JPG, age calculator, EMI calculator, free online tools">
 
-<meta name="robots" content="index, follow">
+<meta name="robots"
+content="index, follow">
 
-<link rel="canonical" href="https://anydeskforyou.github.io/Easytools/">
+<link rel="canonical"
+href="https://anydeskforyou.github.io/Easytools/">
 
-<!-- Google Search Console Verification -->
-<!--
-<meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE">
--->
+<meta property="og:title"
+content="Amit Online Tools - Free Online Tools">
 
-<!-- Open Graph SEO -->
-<meta property="og:title" content="Amit Online Tools - Free Online Tools">
-<meta property="og:description" content="Free Image, PDF और Calculator Tools एक ही जगह।">
-<meta property="og:url" content="https://anydeskforyou.github.io/Easytools/">
-<meta property="og:type" content="website">
+<meta property="og:description"
+content="Free Image, PDF, Document Scanner और Calculator Tools">
+
+<meta property="og:url"
+content="https://anydeskforyou.github.io/Easytools/">
+
+<meta property="og:type"
+content="website">
+
 
 <style>
 
@@ -32,627 +42,581 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     margin:0;
-    font-family:Arial,"Noto Sans Devanagari",sans-serif;
-    background:#f5f7fb;
-    color:#172033;
-    line-height:1.6;
+    font-family:Arial,sans-serif;
+    background:#f3f6f9;
+    color:#222;
 }
+
 
 /* HEADER */
 
 header{
-    background:#16213e;
-    color:#fff;
-    padding:15px 16px;
-    position:sticky;
-    top:0;
-    z-index:100;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
-}
+    background:linear-gradient(
+        135deg,
+        #0d6efd,
+        #0056d6
+    );
 
-nav{
-    max-width:1150px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    white-space:nowrap;
-}
-
-.nav-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    font-size:14px;
-}
-
-.nav-links a:hover{
-    text-decoration:underline;
-}
-
-/* HERO */
-
-.hero{
-    background:linear-gradient(135deg,#16213e,#315b96);
-    color:#fff;
+    color:white;
     text-align:center;
-    padding:65px 20px;
+    padding:35px 15px;
 }
 
-.hero h1{
-    font-size:40px;
-    margin:0 0 12px;
+header h1{
+    margin:0;
+    font-size:30px;
 }
 
-.hero p{
-    font-size:18px;
-    max-width:750px;
-    margin:0 auto 25px;
+header p{
+    margin:10px auto 0;
+    max-width:650px;
+    font-size:15px;
+    line-height:1.6;
 }
 
-.search-box{
-    width:min(600px,95%);
-    padding:15px 18px;
-    border-radius:10px;
-    border:0;
-    outline:none;
-    font-size:16px;
-}
 
-/* MAIN */
+/* CONTAINER */
 
-main{
-    max-width:1150px;
+.container{
+    max-width:1100px;
     margin:auto;
-    padding:30px 16px;
+    padding:20px 15px;
 }
 
-.section-title{
-    margin-top:35px;
-    margin-bottom:18px;
-    font-size:28px;
+
+/* INTRO */
+
+.intro{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:
+    0 3px 15px rgba(0,0,0,.07);
+
+    text-align:center;
 }
 
-/* TOOL GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-}
-
-.card{
-    background:#fff;
-    border-radius:14px;
-    padding:22px;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
-    transition:.2s;
-    border:1px solid #edf0f5;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 7px 22px rgba(0,0,0,.12);
-}
-
-.card h3{
-    margin:8px 0;
-    font-size:19px;
-}
-
-.card p{
-    color:#667085;
-    font-size:14px;
-    min-height:45px;
-}
-
-.card a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.primary{
-    display:inline-block;
-    background:#315b96;
-    color:#fff;
-    padding:10px 15px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:14px;
-}
-
-.primary:hover{
-    opacity:.9;
-}
-
-/* ABOUT */
-
-.about{
-    background:#fff;
-    padding:25px;
-    border-radius:14px;
-    margin-top:40px;
-    box-shadow:0 3px 15px rgba(0,0,0,.06);
-}
-
-.about h2{
+.intro h2{
     margin-top:0;
 }
 
-.about p{
-    color:#4b5565;
+
+/* TOOLS GRID */
+
+.tools-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:18px;
 }
 
-/* AD */
 
-.ad{
-    min-height:90px;
-    background:#e9edf4;
-    border:1px dashed #aaa;
+/* TOOL CARD */
+
+.tool-card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    min-height:175px;
+
+    box-shadow:
+    0 3px 15px rgba(0,0,0,.08);
+
+    transition:
+    transform .2s,
+    box-shadow .2s;
+
     display:flex;
-    align-items:center;
+    flex-direction:column;
     justify-content:center;
-    margin:35px 0;
-    color:#667085;
-    border-radius:10px;
 }
+
+.tool-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 7px 20px rgba(0,0,0,.13);
+}
+
+.tool-card h3{
+
+    margin-top:0;
+
+    color:#0d6efd;
+
+    font-size:20px;
+}
+
+.tool-card p{
+
+    color:#555;
+
+    line-height:1.6;
+
+    font-size:14px;
+}
+
+
+/* BUTTON */
+
+.tool-button{
+
+    display:inline-block;
+
+    margin-top:8px;
+
+    background:#0d6efd;
+
+    color:white;
+
+    padding:10px 14px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
 
 /* FOOTER */
 
 footer{
+
+    margin-top:35px;
+
+    background:#222;
+
+    color:#ddd;
+
     text-align:center;
-    padding:35px 20px;
-    margin-top:40px;
-    background:#16213e;
-    color:#fff;
+
+    padding:25px 15px;
+
+    font-size:13px;
+
 }
 
-.footer-links{
-    margin-bottom:12px;
-}
+footer a{
 
-.footer-links a{
     color:#fff;
-    margin:0 8px;
+
     text-decoration:none;
-    font-size:14px;
+
 }
 
-.footer-links a:hover{
-    text-decoration:underline;
-}
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
-    nav{
-        flex-direction:column;
-        text-align:center;
+    header h1{
+        font-size:25px;
     }
 
-    .nav-links{
-        justify-content:center;
-    }
-
-    .hero{
-        padding:50px 15px;
-    }
-
-    .hero h1{
-        font-size:29px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .grid{
+    .tools-grid{
         grid-template-columns:1fr;
     }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
 <header>
 
-<nav>
-
-<div class="logo">
+<h1>
 🛠️ Amit Online Tools
-</div>
+</h1>
 
-<div class="nav-links">
-
-<a href="index.html">Home</a>
-
-<a href="#image-tools">Image Tools</a>
-
-<a href="#pdf-tools">PDF Tools</a>
-
-<a href="#calculators">Calculators</a>
-
-</div>
-
-</nav>
+<p>
+Free Online Image, PDF, Document Scanner
+और Calculator Tools
+</p>
 
 </header>
 
 
-<!-- HERO -->
 
-<section class="hero">
-
-<h1>All Online Tools in One Place</h1>
-
-<p>
-Photo, PDF और Calculator से जुड़े आसान, तेज और Free Online Tools इस्तेमाल करें।
-</p>
-
-<input
-class="search-box"
-id="search"
-type="search"
-placeholder="🔍 Tool खोजें..."
-aria-label="Search online tools"
-oninput="filterTools()"
->
-
-</section>
+<div class="container">
 
 
-<!-- MAIN -->
+<!-- INTRO -->
 
-<main>
+<div class="intro">
 
-
-<!-- IMAGE TOOLS -->
-
-<section id="image-tools">
-
-<h2 class="section-title">
-🖼️ Free Image Tools
+<h2>
+🚀 Free Online Tools
 </h2>
 
-<div class="grid">
-
-
-<div class="card" data-name="image compressor photo compress kb">
-
-<a href="image-compressor.html">
-
-<h3>📸 Image Compressor</h3>
-
 <p>
-Photo का size और KB कम करें। Online image compression tool।
+बिना किसी software को install किए अपने मोबाइल
+या कंप्यूटर से आसानी से काम करें।
 </p>
 
-<span class="primary">
+</div>
+
+
+
+<!-- ALL TOOLS -->
+
+<div class="tools-grid">
+
+
+<!-- 1 IMAGE COMPRESSOR -->
+
+<a href="image-compressor.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+🗜️ Image Compressor
+</h3>
+
+<p>
+Image का size कम करें और quality को
+ज्यादा खराब किए बिना फोटो compress करें।
+</p>
+
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="image resizer resize photo width height">
 
-<a href="image-resizer.html">
 
-<h3>📐 Image Resizer</h3>
+<!-- 2 IMAGE RESIZER -->
+
+<a href="image-resizer.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+📐 Image Resizer
+</h3>
 
 <p>
-Photo की Width और Height आसानी से बदलें।
+फोटो की width और height अपनी जरूरत के
+अनुसार आसानी से बदलें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="image cropper crop photo">
 
-<a href="image-cropper.html">
 
-<h3>✂️ Image Cropper</h3>
+<!-- 3 IMAGE CROPPER -->
+
+<a href="image-cropper.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+✂️ Image Cropper
+</h3>
 
 <p>
-Photo को Square, Passport या 16:9 ratio में crop करें।
+Photo को 1:1, 3:4 और 16:9 जैसे ratio में
+crop करें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="signature resizer signature sign">
 
-<a href="signature-resizer.html">
 
-<h3>✍️ Signature Resizer</h3>
+<!-- 4 SIGNATURE RESIZER -->
+
+<a href="signature-resizer.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+✍️ Signature Resizer
+</h3>
 
 <p>
-Signature image को अपनी जरूरत के अनुसार resize करें।
+Signature की फोटो को required width और
+height में resize करें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="passport photo maker photo sheet">
 
-<a href="passport-photo-maker.html">
 
-<h3>🪪 Passport Photo Maker</h3>
+<!-- 5 PASSPORT PHOTO -->
+
+<a href="passport-photo-maker.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+🪪 Passport Photo Maker
+</h3>
 
 <p>
-Passport size photo की printable sheet आसानी से बनाएं।
+Passport और ID size photo तैयार करें और
+एक sheet में कई copies बनाएं।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="png jpg converter png to jpg">
 
-<a href="png-to-jpg.html">
 
-<h3>🔄 PNG to JPG</h3>
+<!-- 6 PNG TO JPG -->
+
+<a href="png-to-jpg.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+🖼️ PNG to JPG
+</h3>
 
 <p>
-PNG image को JPG format में आसानी से convert करें।
+PNG image को आसानी से JPG format में
+convert करें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
+</div>
+
 </a>
 
-</div>
 
 
-</div>
+<!-- 7 JPG TO PDF -->
 
-</section>
+<a href="jpg-to-pdf.html"
+style="text-decoration:none;color:inherit;">
 
+<div class="tool-card">
 
-<!-- PDF TOOLS -->
-
-<section id="pdf-tools">
-
-<h2 class="section-title">
-📄 Free PDF Tools
-</h2>
-
-<div class="grid">
-
-
-<div class="card" data-name="jpg to pdf image pdf converter">
-
-<a href="jpg-to-pdf.html">
-
-<h3>📄 JPG to PDF</h3>
+<h3>
+📄 JPG to PDF
+</h3>
 
 <p>
-एक या कई photos को एक PDF file में convert करें।
+एक या कई JPG photos को एक PDF file में
+convert करें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="pdf to jpg converter image">
 
-<a href="pdf-to-jpg.html">
 
-<h3>🖼️ PDF to JPG</h3>
+<!-- 8 PDF TO JPG -->
+
+<a href="pdf-to-jpg.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+📑 PDF to JPG
+</h3>
 
 <p>
-PDF के pages को JPG images में convert करें।
+PDF के pages को JPG images में convert
+करके download करें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
+</div>
+
 </a>
 
-</div>
 
 
-</div>
+<!-- 9 AGE CALCULATOR -->
 
-</section>
+<a href="age-calculator.html"
+style="text-decoration:none;color:inherit;">
 
+<div class="tool-card">
 
-<!-- CALCULATORS -->
-
-<section id="calculators">
-
-<h2 class="section-title">
-🧮 Free Online Calculators
-</h2>
-
-<div class="grid">
-
-
-<div class="card" data-name="age calculator age calculator hindi umr">
-
-<a href="age-calculator.html">
-
-<h3>🎂 Age Calculator</h3>
+<h3>
+🎂 Age Calculator
+</h3>
 
 <p>
-Date of Birth डालकर अपनी exact उम्र calculate करें।
+अपनी Date of Birth डालकर exact age
+Years, Months और Days में जानें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
-</a>
-
 </div>
 
+</a>
 
-<div class="card" data-name="emi calculator loan emi">
 
-<a href="emi-calculator.html">
 
-<h3>💰 EMI Calculator</h3>
+<!-- 10 EMI CALCULATOR -->
+
+<a href="emi-calculator.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+💰 EMI Calculator
+</h3>
 
 <p>
-Loan amount, interest और duration से EMI calculate करें।
+Loan amount, interest और tenure डालकर
+monthly EMI और total interest निकालें।
 </p>
 
-<span class="primary">
+<span class="tool-button">
 Open Tool →
 </span>
 
+</div>
+
 </a>
 
+
+
+<!-- 11 AUTO DOCUMENT SCANNER -->
+
+<a href="document-scanner.html"
+style="text-decoration:none;color:inherit;">
+
+<div class="tool-card">
+
+<h3>
+📄 Auto Document Scanner
+</h3>
+
+<p>
+Document की photo डालते ही उसके corners
+automatically detect करके उसे सीधा और
+scanner जैसी clear बनाएं।
+</p>
+
+<span class="tool-button">
+Scan Document →
+</span>
+
 </div>
 
+</a>
 
-</div>
-
-</section>
-
-
-<!-- ADVERTISEMENT -->
-
-<div class="ad">
-
-Advertisement Space — यहाँ बाद में AdSense Ads लगाए जा सकते हैं
 
 </div>
 
 
 <!-- ABOUT -->
 
-<section class="about">
+<div class="intro" style="margin-top:30px;">
 
-<h2>About Amit Online Tools</h2>
+<h2>
+📱 Amit Online Tools के बारे में
+</h2>
 
 <p>
-Amit Online Tools एक free online tools website है जहाँ आप image editing,
-PDF conversion और calculator से जुड़े उपयोगी tools आसानी से इस्तेमाल कर सकते हैं।
+Amit Online Tools एक free online tools website है
+जहाँ आप image editing, PDF conversion,
+document scanning और calculation जैसे
+काम आसानी से कर सकते हैं।
 </p>
 
 <p>
-हमारा उद्देश्य रोजमर्रा के जरूरी online कामों को आसान और तेज बनाना है।
-अधिकतर tools browser में ही काम करते हैं और उपयोग करने के लिए किसी software को
-install करने की जरूरत नहीं होती।
+इन tools को मोबाइल और कंप्यूटर दोनों पर
+उपयोग किया जा सकता है।
 </p>
 
-</section>
+</div>
 
 
-</main>
+</div>
+
 
 
 <!-- FOOTER -->
 
 <footer>
 
-<div class="footer-links">
+<p>
+© 2026 Amit Online Tools
+</p>
 
-<a href="index.html">Home</a>
-
-<a href="#image-tools">Image Tools</a>
-
-<a href="#pdf-tools">PDF Tools</a>
-
-<a href="#calculators">Calculators</a>
-
-</div>
-
-© 2026 Amit Online Tools • Free Online Tools
+<p>
+Free Online Tools for Everyone
+</p>
 
 </footer>
 
-
-<script>
-
-function filterTools(){
-
-    let q=document
-        .getElementById("search")
-        .value
-        .toLowerCase()
-        .trim();
-
-    document
-        .querySelectorAll(".card")
-        .forEach(function(card){
-
-            let name=card
-                .getAttribute("data-name")
-                .toLowerCase();
-
-            let text=card
-                .innerText
-                .toLowerCase();
-
-            if(name.includes(q) || text.includes(q)){
-                card.style.display="";
-            }else{
-                card.style.display="none";
-            }
-
-        });
-
-}
-
-</script>
 
 </body>
 </html>
